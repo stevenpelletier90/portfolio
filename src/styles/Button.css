@@ -1,0 +1,205 @@
+/* Base Button Styles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 100px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+/* Status Button - Expandable dot effect */
+.btn-status {
+  background: transparent;
+  border: none;
+  color: #74ff8b;
+  padding: 0;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  overflow: visible;
+  border-radius: 50px;
+}
+
+/* The morphing dot/background */
+.btn-status::before {
+  content: "";
+  position: absolute;
+  left: 0.5rem;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  background: #74ff8b;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  z-index: 0;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(116, 255, 139, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 6px rgba(116, 255, 139, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(116, 255, 139, 0);
+  }
+}
+
+.btn-status:hover::before {
+  width: 100%;
+  height: 100%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50px;
+  background: rgba(116, 255, 139, 0.2);
+  border-color: #74ff8b;
+  animation: none;
+}
+
+.btn-status .status-dot {
+  display: none;
+}
+
+.btn-status .btn-text {
+  white-space: nowrap;
+  position: relative;
+  z-index: 1;
+  padding: 0.5rem 1.5rem 0.5rem 1rem;
+  transition: color 0.3s ease;
+}
+
+.btn-status:hover .btn-text {
+  color: #74ff8b;
+}
+
+/* Greeting Button */
+.btn-greeting {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  backdrop-filter: blur(10px);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.btn-greeting:hover {
+  background: var(--color-dark);
+}
+
+.wave-emoji {
+  font-size: 1rem;
+}
+
+/* Icon styles */
+.btn-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Light Button - Primary style */
+.light-button {
+  background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
+  color: var(--bg-primary);
+  padding: 0.875rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: 2px solid #e0e0e0;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  position: relative;
+}
+
+.light-button:hover {
+  background: linear-gradient(225deg, #f8f8f8 0%, #e8e8e8 100%);
+  border-color: #d0d0d0;
+}
+
+/* Dark Button - Secondary style */
+.dark-button {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  border: 2px solid #333;
+  color: var(--text-primary);
+  padding: 0.875rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.dark-button:hover {
+  background: linear-gradient(225deg, #2d2d2d 0%, #404040 100%);
+  border-color: #444;
+}
+
+/* Icon styles for all buttons */
+.light-button .btn-icon,
+.dark-button .btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Ensure consistent text and icon alignment */
+.light-button .btn-text,
+.dark-button .btn-text {
+  position: relative;
+  z-index: 1;
+}
+
+/* CTA Button specific styles */
+.cta-button .btn-text {
+  order: 1;
+}
+
+.cta-button .btn-icon {
+  order: 2;
+}
+
+/* CTA Button Arrow Animation */
+.cta-button .arrow-icon {
+  display: inline-block;
+  font-size: 0.875rem;
+  transition: transform 0.3s ease;
+  transform: rotate(-45deg);
+}
+
+.cta-button:hover .arrow-icon {
+  transform: rotate(0deg) translateX(4px);
+}
+
+/* Hero CTA Button - extends light-button */
+.hero-cta {
+  /* Inherits all styles from parent */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .dark-button {
+    width: 100%;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(rm:*)",
+      "Bash(mkdir:*)",
+      "Bash(mv:*)",
+      "Bash(cp:*)",
+      "Bash(npm run dev:*)",
+      "Bash(npm run lint)",
+      "Bash(npm run format:check:*)",
+      "Bash(npm run format:*)",
+      "Bash(npm install:*)",
+      "Bash(npm uninstall:*)",
+      "Bash(claude mcp add:*)",
+      "Bash(where claude)",
+      "Bash(dir:*)",
+      "Bash(ls:*)",
+      "Bash(\"C:\\Users\\steve\\.claude\\local\\claude\" mcp add filesystem -- cmd /c npx -y @modelcontextprotocol/server-filesystem \"C:\\Users\\steve\\Downloads\\portfolio\")",
+      "mcp__sequential-thinking__sequentialthinking"
+    ],
+    "deny": []
+  },
+  "enableAllProjectMcpServers": false
+}
