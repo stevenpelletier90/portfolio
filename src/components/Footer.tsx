@@ -11,24 +11,13 @@ function Footer() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    element?.scrollIntoView({ behavior: 'smooth' });
-  };
-
   return (
     <footer className='footer'>
       <div className='footer-content'>
         <div className='footer-tagline'>
           <h2>My artistic style and analytic approach creates truly unforgettable designs.</h2>
           <div className='footer-cta'>
-            <DarkButton
-              href='#resume'
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToSection('resume');
-              }}
-            >
+            <DarkButton href='mailto:steve.d.pelletier@gmail.com'>
               Download My Resume
             </DarkButton>
             <CTAButton href='https://www.linkedin.com/in/stevendpelletier/'>Let's Connect</CTAButton>
@@ -46,35 +35,14 @@ function Footer() {
           </div>
           <div className='footer-right'>
             <nav className='footer-nav'>
-              <a
-                href='#work'
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection('work');
-                }}
-              >
-                Work
-              </a>
-              <a
-                href='#about'
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection('about');
-                }}
-              >
-                About
-              </a>
-              <a
-                href='#resume'
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection('resume');
-                }}
-              >
-                Resume
+              <a href='mailto:steve.d.pelletier@gmail.com'>
+                Email
               </a>
               <a href='https://www.linkedin.com/in/stevendpelletier/' target='_blank' rel='noopener noreferrer'>
-                Connect
+                LinkedIn
+              </a>
+              <a href='https://github.com/stevendpelletier' target='_blank' rel='noopener noreferrer'>
+                GitHub
               </a>
             </nav>
           </div>

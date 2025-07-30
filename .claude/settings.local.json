@@ -16,7 +16,10 @@
       "Bash(dir:*)",
       "Bash(ls:*)",
       "Bash(\"C:\\Users\\steve\\.claude\\local\\claude\" mcp add filesystem -- cmd /c npx -y @modelcontextprotocol/server-filesystem \"C:\\Users\\steve\\Downloads\\portfolio\")",
-      "mcp__sequential-thinking__sequentialthinking"
+      "mcp__sequential-thinking__sequentialthinking",
+      "mcp__puppeteer__puppeteer_navigate",
+      "mcp__puppeteer__puppeteer_screenshot",
+      "mcp__puppeteer__puppeteer_evaluate"
     ],
     "deny": []
   },
