@@ -20,11 +20,7 @@ function Logo({ className = "" }: LogoProps) {
   };
 
   return (
-    <a
-      href="/"
-      onClick={handleLogoClick}
-      className={`logo ${className}`}
-    >
+    <a href="/" onClick={handleLogoClick} className={`logo ${className}`}>
       <img
         src="/logo-white.svg"
         alt="Steven Pelletier Logo"

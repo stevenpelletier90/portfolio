@@ -1,0 +1,35 @@
+/* Tech Marquee Component */
+.tech-marquee {
+  background: var(--bg-secondary);
+  padding: var(--space-2xl) 0;
+  width: 100%;
+  position: relative;
+}
+
+.marquee-item {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-light);
+  margin-right: var(--space-xl);
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.marquee-item i {
+  font-size: var(--font-size-xl);
+  color: var(--text-light);
+}
+
+@media (max-width: 768px) {
+  .marquee-item {
+    font-size: var(--font-size-xl);
+    gap: var(--space-xs);
+    margin-right: var(--space-lg);
+  }
+
+  .marquee-item i {
+    font-size: var(--font-size-lg);
+  }
+}

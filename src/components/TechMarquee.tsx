@@ -1,4 +1,5 @@
 import Marquee from "react-fast-marquee";
+import "../styles/components/TechMarquee.css";
 
 const techStack = [
   { name: "React", icon: "fab fa-react" },
@@ -20,17 +21,13 @@ const techStack = [
   { name: "Webpack", icon: "fas fa-cube" },
   { name: "SASS", icon: "fab fa-sass" },
   { name: "TailwindCSS", icon: "fas fa-wind" },
-  { name: "Bootstrap", icon: "fab fa-bootstrap" }
+  { name: "Bootstrap", icon: "fab fa-bootstrap" },
 ];
 
 function TechMarquee() {
   return (
     <div className="tech-marquee">
-      <Marquee 
-        speed={50}
-        gradient={false}
-        pauseOnHover={true}
-      >
+      <Marquee speed={50} gradient={false} pauseOnHover={true}>
         {techStack.map((tech, index) => (
           <span key={index} className="marquee-item">
             <i className={tech.icon}></i>

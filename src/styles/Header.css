@@ -20,7 +20,6 @@
   display: none;
 }
 
-
 .logo {
   color: var(--text-primary);
   display: flex;
@@ -79,13 +78,13 @@
   .desktop-nav {
     display: none;
   }
-  
+
   .header-bottom {
     display: block;
     text-align: center;
     padding: 0 1rem 1rem;
   }
-  
+
   .mobile-nav {
     display: inline-flex;
     justify-content: center;

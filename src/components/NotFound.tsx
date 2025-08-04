@@ -12,23 +12,21 @@ function NotFound() {
           <h1 className="not-found-title">404</h1>
           <h2 className="not-found-subtitle">Page Not Found</h2>
           <p className="not-found-description">
-            Sorry, the page you're looking for doesn't exist. It might have been moved, deleted, or you entered the wrong URL.
+            Sorry, the page you're looking for doesn't exist. It might have been
+            moved, deleted, or you entered the wrong URL.
           </p>
-          
+
           <div className="not-found-actions">
             <CTAButton onClick={() => navigate("/")} className="not-found-cta">
               Back to Home
             </CTAButton>
-            <button 
-              onClick={() => navigate(-1)} 
-              className="back-button"
-            >
+            <button onClick={() => navigate(-1)} className="back-button">
               <i className="fa-solid fa-arrow-left"></i>
               Go Back
             </button>
           </div>
         </div>
-        
+
         <div className="not-found-illustration">
           <div className="error-code">404</div>
           <div className="error-shapes">

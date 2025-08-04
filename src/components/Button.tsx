@@ -6,7 +6,7 @@ interface ButtonProps {
   variant?: "status" | "greeting";
   href?: string;
   onClick?: (
-    e: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>,
+    e: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>
   ) => void;
   className?: string;
   icon?: ReactNode;
@@ -84,7 +84,7 @@ export function LightButton({
   children: ReactNode;
   href?: string;
   onClick?: (
-    e: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>,
+    e: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>
   ) => void;
   className?: string;
   icon?: ReactNode;
@@ -112,7 +112,7 @@ export function DarkButton({
   children: ReactNode;
   href?: string;
   onClick?: (
-    e: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>,
+    e: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>
   ) => void;
   className?: string;
   icon?: ReactNode;
@@ -139,7 +139,7 @@ export function CTAButton({
   children: ReactNode;
   href?: string;
   onClick?: (
-    e: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>,
+    e: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>
   ) => void;
   className?: string;
 }) {
@@ -165,7 +165,7 @@ export function CTADarkButton({
   children: ReactNode;
   href?: string;
   onClick?: (
-    e: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>,
+    e: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>
   ) => void;
   className?: string;
 }) {
