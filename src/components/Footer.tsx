@@ -14,9 +14,7 @@ function Footer() {
     <footer className="footer">
       <div className="footer-content">
         <div className="footer-tagline">
-          <h2>
-            Ready to deliver technical results while elevating your team?
-          </h2>
+          <h2>Ready to deliver technical results while elevating your team?</h2>
           <div className="footer-cta">
             <DarkButton href="mailto:steve.d.pelletier@gmail.com">
               Get In Touch

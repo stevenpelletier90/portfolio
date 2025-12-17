@@ -7,7 +7,8 @@ function HeroSection() {
         <p className="hero-roles">Senior Web Developer & Team Leader</p>
         <h1>Steven Pelletier</h1>
         <p className="hero-tagline">
-          Building high-performance web solutions while elevating teams through mentorship, automation, and accessibility-first development
+          Building high-performance web solutions while elevating teams through
+          mentorship, automation, and accessibility-first development
         </p>
         <CTAButton href="#work" className="hero-cta">
           View My Work

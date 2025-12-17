@@ -35,7 +35,11 @@ function WorkSection() {
           <h3 className="work-subtitle">Real Solutions, Measurable Impact</h3>
 
           <p className="work-description">
-            Each project represents a unique challenge solved through strategic thinking and technical execution. From enterprise content migrations serving thousands of users to accessibility-compliant custom solutions, my work combines performance, usability, and business impact.
+            Each project represents a unique challenge solved through strategic
+            thinking and technical execution. From enterprise content migrations
+            serving thousands of users to accessibility-compliant custom
+            solutions, my work combines performance, usability, and business
+            impact.
           </p>
 
           <div>

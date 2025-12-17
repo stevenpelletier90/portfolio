@@ -7,7 +7,12 @@ function AboutSection() {
 
           {/* Professional Summary */}
           <p className="about-summary">
-            I'm a Senior Web Developer transforming complex challenges into elegant digital solutions. Known for elevating team performance through mentorship, creating efficiency-driving tools, and championing accessibility-first development. I don't just write code—I build systems, improve workflows, and empower teams to deliver exceptional results.
+            I'm a Senior Web Developer transforming complex challenges into
+            elegant digital solutions. Known for elevating team performance
+            through mentorship, creating efficiency-driving tools, and
+            championing accessibility-first development. I don't just write
+            code—I build systems, improve workflows, and empower teams to
+            deliver exceptional results.
           </p>
 
           {/* Impact & Achievements */}
@@ -18,28 +23,41 @@ function AboutSection() {
                 <i className="fas fa-rocket"></i>
                 <div>
                   <strong>Performance Expert</strong>
-                  <p>Optimized high-traffic sites serving 500+ concurrent users with 40% faster load times</p>
+                  <p>
+                    Optimized high-traffic sites serving 500+ concurrent users
+                    with 40% faster load times
+                  </p>
                 </div>
               </div>
               <div className="impact-item">
                 <i className="fas fa-users"></i>
                 <div>
                   <strong>Team Leadership</strong>
-                  <p>Mentored 10+ developers through code reviews, documentation, and onboarding processes—recognized for raising team standards</p>
+                  <p>
+                    Mentored 10+ developers through code reviews, documentation,
+                    and onboarding processes—recognized for raising team
+                    standards
+                  </p>
                 </div>
               </div>
               <div className="impact-item">
                 <i className="fas fa-universal-access"></i>
                 <div>
                   <strong>Accessibility Champion</strong>
-                  <p>Led WCAG/ADA compliance audits ensuring inclusive, user-friendly experiences for all visitors</p>
+                  <p>
+                    Led WCAG/ADA compliance audits ensuring inclusive,
+                    user-friendly experiences for all visitors
+                  </p>
                 </div>
               </div>
               <div className="impact-item">
                 <i className="fas fa-cogs"></i>
                 <div>
                   <strong>Workflow Optimization</strong>
-                  <p>Created automation tools and reusable code snippets that streamlined enterprise content migration processes</p>
+                  <p>
+                    Created automation tools and reusable code snippets that
+                    streamlined enterprise content migration processes
+                  </p>
                 </div>
               </div>
             </div>

@@ -30,7 +30,7 @@ function Button({
       }
     : { onClick };
 
-  const variantClass = variant ? `btn-${variant}` : '';
+  const variantClass = variant ? `btn-${variant}` : "";
 
   return (
     <Component className={`btn ${variantClass} ${className}`.trim()} {...props}>

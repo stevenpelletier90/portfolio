@@ -37,11 +37,11 @@ function CountUp({ end, suffix = "", duration = 2000 }: CountUpProps) {
     const updateCount = () => {
       const now = Date.now();
       const progress = Math.min((now - startTime) / duration, 1);
-      
+
       // Easing function for smooth animation
       const easeOutQuart = 1 - Math.pow(1 - progress, 4);
       const currentCount = Math.floor(easeOutQuart * endValue);
-      
+
       setCount(currentCount);
 
       if (progress < 1) {
@@ -56,7 +56,8 @@ function CountUp({ end, suffix = "", duration = 2000 }: CountUpProps) {
 
   return (
     <div ref={ref} className="stat-number">
-      {count}{suffix}
+      {count}
+      {suffix}
     </div>
   );
 }

@@ -8,7 +8,7 @@ This is Steven Pelletier's portfolio website built with React, TypeScript, and V
 
 ## Development Commands
 
-- `npm run dev` - Start the development server (Vite) at http://localhost:5173
+- `npm run dev` - Start the development server (Vite) at <http://localhost:5173>
 - `npm run build` - Build for production
 - `npm run preview` - Preview production build locally
 - `npm run lint` - Run ESLint to check for issues
@@ -33,17 +33,17 @@ This is Steven Pelletier's portfolio website built with React, TypeScript, and V
 - **Routing Structure**:
   - `/` - Home page with all sections and smooth scrolling
     - `#home` - Hero/landing section
+    - `#about` - About section with bio
     - `#work` - Work/Portfolio section with project cards
-    - `#about` - About section
-    - `#resume` - Resume section
-    - `#connect` - Connect/Contact section
+    - `#testimonials` - Client testimonials section
   - `/project/:id` - Individual project detail pages
+- **Navigation Links**: Work, About, Resume (PDF), Connect (LinkedIn)
 
 ### Component Loading Flow
 
 **Understanding how everything connects:**
 
-```
+```bash
 1. main.tsx (Entry Point)
    └─ Loads: index.css, React, BrowserRouter
    └─ Renders: <App />
@@ -61,33 +61,33 @@ This is Steven Pelletier's portfolio website built with React, TypeScript, and V
       1. <HeroSection />         (Landing with name/title)
       2. <AboutSection />        (About me + images)
       3. <TechMarquee />         (Scrolling tech logos)
-      4. <ServicesSection />     (What I do + skills)
-      5. <SkillsSection />       (Stats/numbers)
-      6. <WorkSection />         (Project showcase)
-      7. <TestimonialsSection /> (Client testimonials)
+      4. <WorkSection />         (Project showcase)
+      5. <TestimonialsSection /> (Client testimonials)
 ```
 
 **Component Categories:**
 
 **Layout Components** (always visible):
+
 - `Header.tsx` - Navigation bar (uses Logo.tsx, Navigation.tsx, Button.tsx)
 - `Footer.tsx` - Footer with links (only on homepage)
 
 **Page Components** (routes):
+
 - `Home.tsx` - Main portfolio page (composes all sections)
 - `Project.tsx` - Individual project detail pages
 - `NotFound.tsx` - 404 error page
 
 **Section Components** (used in Home.tsx):
-- `HeroSection.tsx` - Hero/landing with name
-- `AboutSection.tsx` - About section with bio
-- `TechMarquee.tsx` - Animated tech stack showcase
-- `ServicesSection.tsx` - Services and skills listing
-- `SkillsSection.tsx` - Stats with numbers
-- `WorkSection.tsx` - Portfolio projects grid
-- `TestimonialsSection.tsx` - Client testimonials
+
+- `HeroSection.tsx` - Hero/landing with name (#home)
+- `AboutSection.tsx` - About section with bio (#about)
+- `TechMarquee.tsx` - Animated tech stack showcase (no anchor)
+- `WorkSection.tsx` - Portfolio projects grid (#work)
+- `TestimonialsSection.tsx` - Client testimonials (#testimonials)
 
 **Reusable Components**:
+
 - `Button.tsx` - StatusButton, CTAButton, DarkButton, LightButton
 - `ProjectCard.tsx` - Individual project cards
 - `CountUp.tsx` - Number animation utility
@@ -95,12 +95,13 @@ This is Steven Pelletier's portfolio website built with React, TypeScript, and V
 - `Navigation.tsx` - Navigation links
 
 **Data**:
+
 - `src/data/projects.ts` - Project metadata and content
 
 ### How to Edit Sections
 
 **Want to change section order?**
-→ Edit `Home.tsx` lines 35-48 - just reorder the components
+→ Edit `Home.tsx` lines 32-43 - just reorder the components
 
 **Want to edit a specific section's content?**
 → Open the corresponding section file (e.g., `AboutSection.tsx`)
@@ -125,13 +126,14 @@ This is Steven Pelletier's portfolio website built with React, TypeScript, and V
 
 - **`src/styles.css`** - All component styles in one file:
   - Header, Footer, Buttons
-  - All sections (Hero, About, Services, Skills, Work, Testimonials)
+  - All sections (Hero, About, Work, Testimonials, TechMarquee)
   - Project pages and cards
   - Not Found page
   - Animations and responsive styles
   - Well-organized with comment headers for each section
 
 **CSS Philosophy:**
+
 - Global styles are RESETS and BASE styles only, not design decisions
 - Each component defines its own colors, typography, and hover states
 - No overly broad selectors that cause specificity conflicts
@@ -140,6 +142,7 @@ This is Steven Pelletier's portfolio website built with React, TypeScript, and V
 - No CSS framework - custom CSS implementation
 
 **Modularity Options** (if needed in the future):
+
 - Current setup (2 files) is optimal for portfolio size
 - Could split into modular files if project grows:
   - `src/styles/header.css` - Header component styles
@@ -163,8 +166,8 @@ This is Steven Pelletier's portfolio website built with React, TypeScript, and V
 - Removed Skills component
 - Removed image gallery and loader components
 - Changed from multi-page to single-page portfolio with sections
-- Removed React Router - now uses smooth scroll navigation
-- Updated navigation with Work, About, Resume, Connect as section anchors
+- Smooth scroll navigation for section anchors on homepage
+- Updated navigation with Work (#work), About (#about), Resume (PDF), Connect (LinkedIn)
 - Added Steven Pelletier as the site owner name
 - Fixed tsconfig.node.json to support both .js and .ts vite config files
 - **Added sliding section animations** - Sections slide up from bottom as user scrolls
@@ -180,7 +183,7 @@ This is Steven Pelletier's portfolio website built with React, TypeScript, and V
   - Removed global `a:hover { opacity: 0.8 }` that conflicted with component-specific hovers
   - Each component now defines its own hover states cleanly
 - **Optimized section heights** - Removed forced `min-height: 100vh` from About, Work, and Testimonials sections
-- **Fixed text contrast issues** - Changed white text to black on light backgrounds (Services, Testimonials sections)
+- **Fixed text contrast issues** - Changed white text to black on light backgrounds (Testimonials section)
 
 ## UI Components Details
 
@@ -221,18 +224,17 @@ Used for primary actions like "My Work" button:
 
 **Common editing tasks and which file to open:**
 
-| What You Want to Change | File to Edit | Line Numbers |
-|------------------------|--------------|--------------|
-| Section order on homepage | `Home.tsx` | Lines 35-48 |
-| Hero text (name/title) | `HeroSection.tsx` | Throughout |
-| About me content | `AboutSection.tsx` | Throughout |
-| Services/skills list | `ServicesSection.tsx` | Throughout |
-| Stats numbers | `SkillsSection.tsx` | Throughout |
-| Projects displayed | `src/data/projects.ts` | Throughout |
-| Header navigation | `Header.tsx` or `Navigation.tsx` | Throughout |
-| Footer links/content | `Footer.tsx` | Throughout |
-| Any styling | `src/styles.css` | Search for section name |
-| Colors/fonts | `src/index.css` | Lines 12-26 (fonts), 39-60 (body) |
+| What You Want to Change   | File to Edit                     | Line Numbers                      |
+| ------------------------- | -------------------------------- | --------------------------------- |
+| Section order on homepage | `Home.tsx`                       | Lines 32-43                       |
+| Hero text (name/title)    | `HeroSection.tsx`                | Throughout                        |
+| About me content          | `AboutSection.tsx`               | Throughout                        |
+| Projects displayed        | `src/data/projects.ts`           | Throughout                        |
+| Testimonials content      | `TestimonialsSection.tsx`        | Throughout                        |
+| Header navigation         | `Header.tsx` or `Navigation.tsx` | Throughout                        |
+| Footer links/content      | `Footer.tsx`                     | Throughout                        |
+| Any styling               | `src/styles.css`                 | Search for section name           |
+| Colors/fonts              | `src/index.css`                  | Lines 12-26 (fonts), 39-60 (body) |
 
 **Pro tip:** Use Ctrl+F in your editor to search for specific text across files.
 
@@ -242,3 +244,52 @@ Used for primary actions like "My Work" button:
 - NEVER create files unless they're absolutely necessary for achieving your goal.
 - ALWAYS prefer editing an existing file to creating a new one.
 - NEVER proactively create documentation files (\*.md) or README files unless explicitly requested.
+
+## Resource Links
+
+When you need documentation or references, use these resources:
+
+**React & Vite:**
+
+- React 19 docs: <https://react.dev/>
+- Vite docs: <https://vite.dev/>
+- React Router docs: <https://reactrouter.com/>
+
+**TypeScript:**
+
+- TypeScript handbook: <https://www.typescriptlang.org/docs/>
+
+**Styling:**
+
+- CSS reference: <https://developer.mozilla.org/en-US/docs/Web/CSS>
+- Font Awesome icons: <https://fontawesome.com/icons>
+
+**Tools:**
+
+- ESLint docs: <https://eslint.org/docs/latest/>
+- Prettier docs: <https://prettier.io/docs/en/>
+
+## Claude Code Skills
+
+Skills are specialized capabilities that enhance Claude Code's abilities. Use them when building UI components.
+
+### Frontend Design Skill
+
+**When to use:** When the user asks to build web components, pages, or applications.
+
+**How to invoke:** Use the Skill tool with `skill: "frontend-design:frontend-design"`
+
+**What it does:**
+
+- Creates distinctive, production-grade frontend interfaces
+- Generates creative, polished code that avoids generic AI aesthetics
+- Produces high design quality suitable for portfolios and professional sites
+
+**Example prompts that should trigger this skill:**
+
+- "Create a new contact form component"
+- "Build a hero section for the homepage"
+- "Design a card component for displaying services"
+- "Add a modal for project details"
+
+**Note:** This skill is a plugin (`plugin:frontend-design@claude-code-plugins`) and should be invoked IMMEDIATELY when the user requests UI component creation.
