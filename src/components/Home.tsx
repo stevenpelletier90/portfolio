@@ -1,11 +1,9 @@
 import { Helmet } from "react-helmet-async";
 import TechMarquee from "./TechMarquee";
-import HeroSection from "./sections/HeroSection";
-import AboutSection from "./sections/AboutSection";
-import ServicesSection from "./sections/ServicesSection";
-import SkillsSection from "./sections/SkillsSection";
-import WorkSection from "./sections/WorkSection";
-import TestimonialsSection from "./sections/TestimonialsSection";
+import HeroSection from "./HeroSection";
+import AboutSection from "./AboutSection";
+import WorkSection from "./WorkSection";
+import TestimonialsSection from "./TestimonialsSection";
 
 function Home() {
   return (
@@ -33,15 +31,11 @@ function Home() {
 
       <main>
         <HeroSection />
-        
+
         <AboutSection />
 
         {/* Tech Stack Marquee */}
         <TechMarquee />
-
-        <ServicesSection />
-
-        <SkillsSection />
 
         <WorkSection />
 

@@ -2,7 +2,6 @@ import { useParams, useNavigate } from "react-router-dom";
 import { projects } from "../data/projects";
 import { CTAButton } from "./Button";
 import { Helmet } from "react-helmet-async";
-import "../styles/Project.css";
 
 function Project() {
   const { id } = useParams<{ id: string }>();

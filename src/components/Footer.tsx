@@ -1,6 +1,5 @@
 import { useNavigate } from "react-router-dom";
 import { DarkButton, CTAButton } from "./Button";
-import "../styles/Footer.css";
 
 function Footer() {
   const navigate = useNavigate();
@@ -16,15 +15,14 @@ function Footer() {
       <div className="footer-content">
         <div className="footer-tagline">
           <h2>
-            My artistic style and analytic approach creates truly unforgettable
-            designs.
+            Ready to deliver technical results while elevating your team?
           </h2>
           <div className="footer-cta">
             <DarkButton href="mailto:steve.d.pelletier@gmail.com">
-              Download My Resume
+              Get In Touch
             </DarkButton>
             <CTAButton href="https://www.linkedin.com/in/stevendpelletier/">
-              Let's Connect
+              View LinkedIn
             </CTAButton>
           </div>
         </div>

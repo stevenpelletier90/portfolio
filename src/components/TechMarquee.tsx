@@ -1,5 +1,4 @@
 import Marquee from "react-fast-marquee";
-import "../styles/components/TechMarquee.css";
 
 const techStack = [
   { name: "React", icon: "fab fa-react" },

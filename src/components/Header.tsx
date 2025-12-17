@@ -1,11 +1,23 @@
+import { useState, useEffect } from "react";
 import Logo from "./Logo";
 import Navigation from "./Navigation";
 import { StatusButton } from "./Button";
-import "../styles/Header.css";
 
 function Header() {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      setIsScrolled(scrollPosition > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className="header">
+    <header className={`header ${isScrolled ? "scrolled" : ""}`}>
       <div className="header-top">
         <Logo />
         <Navigation className="desktop-nav" />

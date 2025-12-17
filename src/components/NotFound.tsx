@@ -1,6 +1,5 @@
 import { useNavigate } from "react-router-dom";
 import { CTAButton } from "./Button";
-import "../styles/NotFound.css";
 
 function NotFound() {
   const navigate = useNavigate();

@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { Project } from "../data/projects";
-import "../styles/ProjectCard.css";
 
 interface ProjectCardProps {
   project: Project;

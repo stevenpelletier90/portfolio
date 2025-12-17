@@ -39,28 +39,116 @@ This is Steven Pelletier's portfolio website built with React, TypeScript, and V
     - `#connect` - Connect/Contact section
   - `/project/:id` - Individual project detail pages
 
-### Component Organization
+### Component Loading Flow
 
-- **Main Components**:
-  - `Header` - Fixed transparent header with Steven Pelletier branding and navigation pills
-  - `Footer` - Site footer (hidden on project pages)
-  - `App` - Main routing component with React Router setup
-  - `Home` - Main portfolio page with all sections and sliding animations
-  - `Project` - Individual project detail page component
-  - `ProjectCard` - Reusable project card component for the work section
-- **Button Library** (`src/components/Button.tsx`):
-  - `StatusButton` - Green expandable dot button for "Available for Work" status
-  - `GreetingButton` - Button with wave emoji for friendly interactions
-  - `CTAButton` - Call-to-action button with rotating arrow animation
-- **Data**:
-  - `src/data/projects.ts` - TypeScript interface and project data (4 sample projects)
+**Understanding how everything connects:**
 
-### Styling
+```
+1. main.tsx (Entry Point)
+   └─ Loads: index.css, React, BrowserRouter
+   └─ Renders: <App />
 
-- Component-specific CSS files in `src/styles/`
-- Global styles in `src/index.css`
+2. App.tsx (Router & Layout)
+   └─ Always renders: <Header />
+   └─ Routes to pages based on URL:
+      • "/" → <Home />
+      • "/project/:id" → <Project />
+      • "*" → <NotFound />
+   └─ Conditionally renders: <Footer /> (only on homepage)
+
+3. Home.tsx (Main Page - Section Container)
+   └─ Renders sections in this exact order:
+      1. <HeroSection />         (Landing with name/title)
+      2. <AboutSection />        (About me + images)
+      3. <TechMarquee />         (Scrolling tech logos)
+      4. <ServicesSection />     (What I do + skills)
+      5. <SkillsSection />       (Stats/numbers)
+      6. <WorkSection />         (Project showcase)
+      7. <TestimonialsSection /> (Client testimonials)
+```
+
+**Component Categories:**
+
+**Layout Components** (always visible):
+- `Header.tsx` - Navigation bar (uses Logo.tsx, Navigation.tsx, Button.tsx)
+- `Footer.tsx` - Footer with links (only on homepage)
+
+**Page Components** (routes):
+- `Home.tsx` - Main portfolio page (composes all sections)
+- `Project.tsx` - Individual project detail pages
+- `NotFound.tsx` - 404 error page
+
+**Section Components** (used in Home.tsx):
+- `HeroSection.tsx` - Hero/landing with name
+- `AboutSection.tsx` - About section with bio
+- `TechMarquee.tsx` - Animated tech stack showcase
+- `ServicesSection.tsx` - Services and skills listing
+- `SkillsSection.tsx` - Stats with numbers
+- `WorkSection.tsx` - Portfolio projects grid
+- `TestimonialsSection.tsx` - Client testimonials
+
+**Reusable Components**:
+- `Button.tsx` - StatusButton, CTAButton, DarkButton, LightButton
+- `ProjectCard.tsx` - Individual project cards
+- `CountUp.tsx` - Number animation utility
+- `Logo.tsx` - Site logo component
+- `Navigation.tsx` - Navigation links
+
+**Data**:
+- `src/data/projects.ts` - Project metadata and content
+
+### How to Edit Sections
+
+**Want to change section order?**
+→ Edit `Home.tsx` lines 35-48 - just reorder the components
+
+**Want to edit a specific section's content?**
+→ Open the corresponding section file (e.g., `AboutSection.tsx`)
+
+**Want to change header/footer?**
+→ `Header.tsx` or `Footer.tsx` - they're separate files
+
+**Want to style something?**
+→ All styles are in `src/styles.css` with clear comment headers
+
+### Styling Architecture
+
+**Two-file CSS system** for simplicity and maintainability:
+
+- **`src/index.css`** - Global foundation only:
+  - Font declarations (@font-face)
+  - CSS resets (margin, padding, box-sizing)
+  - Base body styles (font-family, background, colors)
+  - Minimal typography defaults (NO color declarations on h1-h6, p tags)
+  - Base button/input resets
+  - Font Awesome import
+
+- **`src/styles.css`** - All component styles in one file:
+  - Header, Footer, Buttons
+  - All sections (Hero, About, Services, Skills, Work, Testimonials)
+  - Project pages and cards
+  - Not Found page
+  - Animations and responsive styles
+  - Well-organized with comment headers for each section
+
+**CSS Philosophy:**
+- Global styles are RESETS and BASE styles only, not design decisions
+- Each component defines its own colors, typography, and hover states
+- No overly broad selectors that cause specificity conflicts
+- Components are self-contained to avoid cascade issues
 - **Font Awesome** - Installed for icons (`@fortawesome/fontawesome-free`)
 - No CSS framework - custom CSS implementation
+
+**Modularity Options** (if needed in the future):
+- Current setup (2 files) is optimal for portfolio size
+- Could split into modular files if project grows:
+  - `src/styles/header.css` - Header component styles
+  - `src/styles/footer.css` - Footer component styles
+  - `src/styles/buttons.css` - Button library
+  - `src/styles/sections.css` - All page sections
+  - `src/styles/projects.css` - Project pages
+- For now, single `styles.css` keeps things simple and searchable
+- All styles in one file = easy Ctrl+F searching, no import confusion
 
 ### TypeScript Configuration
 
@@ -85,6 +173,14 @@ This is Steven Pelletier's portfolio website built with React, TypeScript, and V
 - **Enhanced button library** - Added StatusButton with expandable dot animation and CTAButton with rotating arrow
 - **React Router implementation** - Added routing for individual project pages with dynamic URLs
 - **Project showcase system** - Created ProjectCard components and detailed project pages
+- **CSS Architecture Refactor** - Consolidated from 4 files to 2 files:
+  - Removed confusing components/sections/projects distinction
+  - Combined all component styles into single `styles.css`
+  - Cleaned up overly broad global styles that caused specificity conflicts
+  - Removed global `a:hover { opacity: 0.8 }` that conflicted with component-specific hovers
+  - Each component now defines its own hover states cleanly
+- **Optimized section heights** - Removed forced `min-height: 100vh` from About, Work, and Testimonials sections
+- **Fixed text contrast issues** - Changed white text to black on light backgrounds (Services, Testimonials sections)
 
 ## UI Components Details
 
@@ -120,6 +216,25 @@ Used for primary actions like "My Work" button:
 - **Project Pages**: Full-featured layouts with hero images, tech stacks, live/GitHub links, and image galleries
 - **Navigation**: Back button returns to home page work section
 - **Data Structure**: Projects defined in `src/data/projects.ts` with comprehensive metadata
+
+## Quick Editing Reference
+
+**Common editing tasks and which file to open:**
+
+| What You Want to Change | File to Edit | Line Numbers |
+|------------------------|--------------|--------------|
+| Section order on homepage | `Home.tsx` | Lines 35-48 |
+| Hero text (name/title) | `HeroSection.tsx` | Throughout |
+| About me content | `AboutSection.tsx` | Throughout |
+| Services/skills list | `ServicesSection.tsx` | Throughout |
+| Stats numbers | `SkillsSection.tsx` | Throughout |
+| Projects displayed | `src/data/projects.ts` | Throughout |
+| Header navigation | `Header.tsx` or `Navigation.tsx` | Throughout |
+| Footer links/content | `Footer.tsx` | Throughout |
+| Any styling | `src/styles.css` | Search for section name |
+| Colors/fonts | `src/index.css` | Lines 12-26 (fonts), 39-60 (body) |
+
+**Pro tip:** Use Ctrl+F in your editor to search for specific text across files.
 
 ## Important Notes
 

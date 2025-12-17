@@ -1,9 +1,8 @@
 import { ReactNode } from "react";
-import "../styles/Button.css";
 
 interface ButtonProps {
   children: ReactNode;
-  variant?: "status" | "greeting";
+  variant?: "status";
   href?: string;
   onClick?: (
     e: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>
@@ -14,7 +13,7 @@ interface ButtonProps {
 
 function Button({
   children,
-  variant = "greeting",
+  variant,
   href,
   onClick,
   className = "",
@@ -31,8 +30,10 @@ function Button({
       }
     : { onClick };
 
+  const variantClass = variant ? `btn-${variant}` : '';
+
   return (
-    <Component className={`btn btn-${variant} ${className}`} {...props}>
+    <Component className={`btn ${variantClass} ${className}`.trim()} {...props}>
       {icon && <span className="btn-icon">{icon}</span>}
       <span className="btn-text">{children}</span>
     </Component>
@@ -42,33 +43,15 @@ function Button({
 // Status Button Component (Green dot with text)
 export function StatusButton({
   status = "Available for Work",
-  available = true,
 }: {
   status?: string;
-  available?: boolean;
 }) {
   return (
     <Button
       variant="status"
       href="https://www.linkedin.com/in/stevendpelletier/"
-      icon={
-        <span className={`status-dot ${available ? "available" : "busy"}`} />
-      }
     >
       {status}
-    </Button>
-  );
-}
-
-// Greeting Button Component (Waving hand with text)
-export function GreetingButton({
-  greeting = "Hey there, I'm Steven!",
-}: {
-  greeting?: string;
-}) {
-  return (
-    <Button variant="greeting" icon={<span className="wave-emoji">👋</span>}>
-      {greeting}
     </Button>
   );
 }

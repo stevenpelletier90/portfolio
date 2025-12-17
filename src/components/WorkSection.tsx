@@ -1,5 +1,4 @@
-import { CTAButton } from "../Button";
-import "../../styles/components/WorkSection.css";
+import { CTAButton } from "./Button";
 
 function WorkSection() {
   return (
@@ -31,20 +30,17 @@ function WorkSection() {
         </div>
 
         <div className="work-content">
-          <h2 className="work-title">My Work</h2>
+          <h2 className="work-title">Featured Projects</h2>
 
-          <h3 className="work-subtitle">Crafting Digital Experiences</h3>
+          <h3 className="work-subtitle">Real Solutions, Measurable Impact</h3>
 
           <p className="work-description">
-            From responsive websites to complex web applications, I create
-            digital solutions that combine beautiful design with robust
-            functionality. Each project is tailored to meet specific
-            business goals while providing exceptional user experiences.
+            Each project represents a unique challenge solved through strategic thinking and technical execution. From enterprise content migrations serving thousands of users to accessibility-compliant custom solutions, my work combines performance, usability, and business impact.
           </p>
 
           <div>
             <CTAButton href="#connect" className="work-cta">
-              View All Projects
+              Let's Work Together
             </CTAButton>
           </div>
         </div>

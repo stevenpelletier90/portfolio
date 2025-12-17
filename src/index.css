@@ -1,9 +1,9 @@
-/* Font Awesome */
-@import "@fortawesome/fontawesome-free/css/all.min.css";
+/* Component Styles */
+@import "./styles.css";
 
-/* CSS Custom Properties */
-@import "./styles/globals/variables.css";
-
+/* ===================================
+   FONTS
+   =================================== */
 @font-face {
   font-family: "Acari Sans";
   src: url("/fonts/AcariSans[wght].ttf") format("truetype-variations");
@@ -47,25 +47,23 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: var(--text-primary);
-  background-color: var(--bg-primary);
-  line-height: var(--line-height-normal);
+  color: #ffffff;
+  background-color: #000000;
+  line-height: 1.5;
   overflow-x: hidden;
   position: relative;
-  font-size: var(--font-size-base);
+  font-size: 16px;
 }
 
-/* Typography */
+/* Typography - Minimal defaults */
 h1, h2, h3, h4, h5, h6 {
-  line-height: var(--line-height-tight);
-  font-weight: var(--font-weight-semibold);
-  color: var(--text-primary);
+  line-height: 1.1;
+  font-weight: 600;
   margin: 0;
 }
 
 p {
-  color: var(--text-primary);
-  line-height: var(--line-height-normal);
+  line-height: 1.5;
   margin: 0;
 }
 
@@ -73,11 +71,7 @@ p {
 a {
   text-decoration: none;
   color: inherit;
-  transition: var(--transition-fast);
-}
-
-a:hover {
-  opacity: 0.8;
+  transition: 150ms ease-in-out;
 }
 
 /* Images */
@@ -113,12 +107,12 @@ input, textarea, select {
 
 /* Focus states */
 *:focus {
-  outline: 2px solid var(--color-accent);
+  outline: 2px solid #74ff8b;
   outline-offset: 2px;
 }
 
 /* Selection */
 ::selection {
-  background-color: var(--color-accent);
-  color: var(--color-black);
+  background-color: #74ff8b;
+  color: #000000;
 }

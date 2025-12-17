@@ -5,7 +5,6 @@ import Footer from "./components/Footer";
 import Home from "./components/Home";
 import Project from "./components/Project";
 import NotFound from "./components/NotFound";
-import "./App.css";
 
 function App() {
   const location = useLocation();
