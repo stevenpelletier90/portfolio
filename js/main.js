@@ -33,9 +33,14 @@ if (heroEl) {
     mouseX = 0.5,
     mouseY = 0.5;
 
+  let heroAnimating = false;
   new ResizeObserver(([entry]) => {
     width = canvas.width = entry.contentRect.width;
     height = canvas.height = entry.contentRect.height;
+    if (!heroAnimating) {
+      heroAnimating = true;
+      draw();
+    }
   }).observe(heroEl);
 
   heroEl.addEventListener("mousemove", (e) => {
@@ -203,7 +208,6 @@ if (heroEl) {
     requestAnimationFrame(draw);
   }
 
-  draw();
 }
 
 /* ===================================
@@ -215,9 +219,14 @@ if (footerCanvas) {
   const fCtx = footerCanvas.getContext("2d");
   let fWidth, fHeight;
 
+  let footerAnimating = false;
   new ResizeObserver(([entry]) => {
     fWidth = footerCanvas.width = entry.contentRect.width;
     fHeight = footerCanvas.height = entry.contentRect.height;
+    if (!footerAnimating) {
+      footerAnimating = true;
+      drawFooter();
+    }
   }).observe(footer);
 
   const sunsetWaves = [
@@ -315,7 +324,6 @@ if (footerCanvas) {
     requestAnimationFrame(drawFooter);
   }
 
-  drawFooter();
 }
 
 /* ===================================
