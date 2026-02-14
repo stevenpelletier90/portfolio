@@ -61,6 +61,6 @@ RewriteRule ^(.*)$ https://stevendpelletier.com/$1 [L,R=301]
   # Cross-Origin-Opener-Policy
   Header always set Cross-Origin-Opener-Policy "same-origin"
 
-  # Content-Security-Policy — Trusted Types via header, script hash via <meta> tag
-  Header always set Content-Security-Policy "require-trusted-types-for 'script'"
+  # Content-Security-Policy — hash placeholder replaced at build time
+  Header always set Content-Security-Policy "script-src 'self' 'unsafe-inline' 'sha256-{{CSP_HASH}}'; object-src 'none'; require-trusted-types-for 'script'"
 </IfModule>

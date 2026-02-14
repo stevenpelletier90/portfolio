@@ -1,5 +1,5 @@
 import { createHash } from "crypto";
-import { readFileSync } from "fs";
+import { readFileSync, writeFileSync } from "fs";
 import { resolve } from "path";
 import { fileURLToPath } from "url";
 import { defineConfig } from "vite";
@@ -49,6 +49,22 @@ function htmlPartials() {
   };
 }
 
+function cspHashInject() {
+  return {
+    name: "csp-hash-inject",
+    closeBundle() {
+      const htmlPath = resolve(__dirname, "dist/index.html");
+      const html = readFileSync(htmlPath, "utf-8");
+      const match = html.match(/sha256-([A-Za-z0-9+/=]+)/);
+      if (!match) return;
+
+      const htaccessPath = resolve(__dirname, "dist/.htaccess");
+      const htaccess = readFileSync(htaccessPath, "utf-8");
+      writeFileSync(htaccessPath, htaccess.replace("{{CSP_HASH}}", match[1]));
+    },
+  };
+}
+
 function fontPreload() {
   return {
     name: "font-preload",
@@ -83,6 +99,7 @@ export default defineConfig({
   plugins: [
       htmlPartials(),
       fontPreload(),
+      cspHashInject(),
     ],
   build: {
     outDir: "dist",
