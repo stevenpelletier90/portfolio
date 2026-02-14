@@ -77,7 +77,7 @@
   font-size: 40px;
   font-weight: 800;
   line-height: 1;
-  color: #8b9cf0;
+  color: var(--accent-purple);
   letter-spacing: -0.03em;
 }
 
@@ -131,7 +131,7 @@
 .category-title svg,
 .category-title i {
   font-size: 16px;
-  color: #8b9cf0;
+  color: var(--accent-purple);
 }
 
 .skill-tags {
@@ -156,7 +156,7 @@
 
 .skill-tag i {
   font-size: 12px;
-  color: #8b9cf0;
+  color: var(--accent-purple);
 }
 
 .skill-tag:hover {

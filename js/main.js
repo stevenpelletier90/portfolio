@@ -34,8 +34,10 @@ if (heroEl) {
     mouseY = 0.5;
 
   function resize() {
-    width = canvas.width = heroEl.offsetWidth;
-    height = canvas.height = heroEl.offsetHeight;
+    const w = heroEl.offsetWidth;
+    const h = heroEl.offsetHeight;
+    width = canvas.width = w;
+    height = canvas.height = h;
   }
   resize();
   window.addEventListener("resize", resize);
@@ -218,8 +220,10 @@ if (footerCanvas) {
   let fWidth, fHeight;
 
   function footerResize() {
-    fWidth = footerCanvas.width = footer.offsetWidth;
-    fHeight = footerCanvas.height = footer.offsetHeight;
+    const w = footer.offsetWidth;
+    const h = footer.offsetHeight;
+    fWidth = footerCanvas.width = w;
+    fHeight = footerCanvas.height = h;
   }
   footerResize();
   window.addEventListener("resize", footerResize);
@@ -511,15 +515,19 @@ function closeModal() {
   document.body.style.overflow = "";
 }
 
-modalClose.addEventListener("click", closeModal);
-modal.addEventListener("click", (e) => {
-  if (e.target === modal) closeModal();
-});
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") closeModal();
-});
+if (modal && modalClose) {
+  modalClose.addEventListener("click", closeModal);
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) closeModal();
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeModal();
+  });
+}
 
 /* ===================================
    INIT
    =================================== */
-renderTestimonials();
+if (document.querySelector(".testimonials-marquee-track")) {
+  renderTestimonials();
+}

@@ -2,6 +2,8 @@ import { readFileSync } from "fs";
 import { resolve } from "path";
 import { fileURLToPath } from "url";
 import { defineConfig } from "vite";
+import { compression } from "vite-plugin-compression2";
+import { ViteMinifyPlugin } from "vite-plugin-minify";
 
 const __dirname = fileURLToPath(new URL(".", import.meta.url));
 
@@ -35,9 +37,44 @@ function htmlPartials() {
   };
 }
 
+function fontPreload() {
+  return {
+    name: "font-preload",
+    transformIndexHtml: {
+      order: "post",
+      handler(_html, ctx) {
+        if (!ctx.bundle) return;
+        const tags = [];
+        for (const fileName of Object.keys(ctx.bundle)) {
+          if (/fa-(solid|brands)-.*\.woff2$/.test(fileName)) {
+            tags.push({
+              tag: "link",
+              attrs: {
+                rel: "preload",
+                href: `/${fileName}`,
+                as: "font",
+                type: "font/woff2",
+                crossorigin: true,
+              },
+              injectTo: "head-prepend",
+            });
+          }
+        }
+        return tags;
+      },
+    },
+  };
+}
+
 export default defineConfig({
   root: ".",
-  plugins: [htmlPartials()],
+  plugins: [
+      htmlPartials(),
+      fontPreload(),
+      ViteMinifyPlugin(),
+      compression({ algorithm: "gzip" }),
+      compression({ algorithm: "brotliCompress" }),
+    ],
   build: {
     outDir: "dist",
     rollupOptions: {

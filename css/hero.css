@@ -79,7 +79,7 @@
   margin-bottom: 8px;
   font-size: 14px;
   font-weight: 600;
-  color: #8b9cf0;
+  color: var(--accent-purple);
   text-transform: uppercase;
   letter-spacing: 0.2em;
   animation: hero-text-reveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.05s both;

@@ -1,5 +1,30 @@
 @import url("@fortawesome/fontawesome-free/css/all.css");
 
+/* Override Font Awesome's font-display: block → swap */
+@font-face {
+  font-family: "Font Awesome 7 Brands";
+  font-style: normal;
+  font-weight: 400;
+  src: url("@fortawesome/fontawesome-free/webfonts/fa-brands-400.woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Font Awesome 7 Free";
+  font-style: normal;
+  font-weight: 400;
+  src: url("@fortawesome/fontawesome-free/webfonts/fa-regular-400.woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Font Awesome 7 Free";
+  font-style: normal;
+  font-weight: 900;
+  src: url("@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2");
+  font-display: swap;
+}
+
 /* ===================================
    FONTS
    =================================== */
@@ -37,9 +62,10 @@
 
   /* Text */
   --text-primary: #fff;
-  --text-secondary: rgb(255 255 255 / 55%);
+  --text-secondary: rgb(255 255 255 / 60%);
   --text-muted: #b0b8c4;
   --text-modal: #374151;
+  --accent-purple: #8b9cf0;
 
   /* Borders */
   --border-subtle: rgb(255 255 255 / 6%);
@@ -78,9 +104,10 @@
 
   /* Text */
   --text-primary: #1a1a2e;
-  --text-secondary: rgb(0 0 0 / 55%);
+  --text-secondary: rgb(0 0 0 / 67%);
   --text-muted: #6b7280;
   --text-modal: #374151;
+  --accent-purple: #4e60c5;
 
   /* Borders */
   --border-subtle: rgb(0 0 0 / 10%);
