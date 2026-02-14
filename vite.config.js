@@ -37,7 +37,7 @@ function htmlPartials() {
         const hash = createHash("sha256")
           .update(scriptMatch[1])
           .digest("base64");
-        const csp = `script-src 'self' 'sha256-${hash}'; object-src 'none'`;
+        const csp = `script-src 'self' 'unsafe-inline' 'sha256-${hash}'; object-src 'none'`;
         html = html.replace(
           "<head>",
           `<head><meta http-equiv="Content-Security-Policy" content="${csp}">`
