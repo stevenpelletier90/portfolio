@@ -1,0 +1,21 @@
+# Dependencies
+node_modules/
+
+# IDE/Editor files
+.vscode/
+.idea/
+.claude/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Build output
+dist/
+
+# Temporary folders
+tmp/
+temp/

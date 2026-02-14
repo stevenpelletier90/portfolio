@@ -1,0 +1,245 @@
+/* ===================================
+   BUTTONS
+   =================================== */
+.btn {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  padding: 16px 24px;
+  font-family: inherit;
+  font-weight: 500;
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  border-radius: 9999px;
+  transition: 300ms ease-in-out;
+}
+
+/* Status Button */
+.btn-status {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 0;
+  overflow: visible;
+  font-size: 14px;
+  font-weight: 500;
+  color: #74ff8b;
+  background: transparent;
+  border: none;
+  border-radius: 9999px;
+  transition: 300ms ease-in-out;
+}
+
+.btn-status::before {
+  position: absolute;
+  top: 50%;
+  left: 8px;
+  z-index: 0;
+  width: 8px;
+  height: 8px;
+  content: "";
+  background: #74ff8b;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  animation: pulse 2s infinite;
+}
+
+.btn-status:hover::before {
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background: rgb(116 255 139 / 20%);
+  border-color: #74ff8b;
+  border-radius: 9999px;
+  transform: translate(-50%, -50%);
+  animation: none;
+}
+
+.btn-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.light-button {
+  position: relative;
+  display: inline-flex;
+  gap: 0.75rem;
+  align-items: center;
+  padding: 0.875rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #000;
+  background: linear-gradient(135deg, #fff 0%, #f0f0f0 100%);
+  border: 2px solid #e0e0e0;
+  border-radius: 9999px;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.light-button:hover {
+  background: linear-gradient(225deg, #f8f8f8 0%, #e8e8e8 100%);
+  border-color: #d0d0d0;
+}
+
+.dark-button {
+  position: relative;
+  display: inline-flex;
+  gap: 0.75rem;
+  align-items: center;
+  padding: 0.875rem 2rem;
+  overflow: hidden;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  border: 2px solid #333;
+  border-radius: 9999px;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.dark-button:hover {
+  background: linear-gradient(225deg, #2d2d2d 0%, #404040 100%);
+  border-color: #444;
+}
+
+.light-button .btn-icon,
+.dark-button .btn-icon {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+}
+
+.light-button .btn-text,
+.dark-button .btn-text {
+  position: relative;
+  z-index: 1;
+}
+
+.cta-button .btn-text {
+  order: 1;
+}
+
+.cta-button .btn-icon {
+  order: 2;
+}
+
+.btn-status .btn-text {
+  position: relative;
+  z-index: 1;
+  padding: 8px 24px 8px 16px;
+  white-space: nowrap;
+  transition: 300ms ease-in-out;
+}
+
+.btn-status:hover .btn-text {
+  color: #74ff8b;
+}
+
+/* CTA Button Arrow */
+.cta-button .arrow-icon {
+  display: inline-block;
+  font-size: 0.875rem;
+  transform: rotate(-45deg);
+  transition: transform 0.3s ease;
+}
+
+.cta-button:hover .arrow-icon {
+  transform: rotate(0deg) translateX(4px);
+}
+
+/* Back Button */
+.back-button {
+  display: inline-flex;
+  gap: 0.5rem;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid var(--border-section);
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+
+.back-button:hover {
+  color: var(--text-primary);
+  background: var(--bg-tag-project);
+  transform: translateX(-3px);
+}
+
+.back-button svg {
+  font-size: 0.8rem;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgb(116 255 139 / 40%);
+  }
+
+  70% {
+    box-shadow: 0 0 0 6px rgb(116 255 139 / 0%);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgb(116 255 139 / 0%);
+  }
+}
+
+@media (width <= 768px) {
+  .dark-button {
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+/* ===================================
+   LIGHT THEME OVERRIDES
+   =================================== */
+[data-theme="light"] .btn-status {
+  color: #16a34a;
+}
+
+[data-theme="light"] .btn-status::before {
+  background: #16a34a;
+}
+
+[data-theme="light"] .btn-status:hover::before {
+  background: rgb(22 163 74 / 15%);
+  border-color: #16a34a;
+}
+
+[data-theme="light"] .btn-status:hover .btn-text {
+  color: #16a34a;
+}
+
+[data-theme="light"] .light-button {
+  color: #fff;
+  background: linear-gradient(135deg, #1a1a2e 0%, #2d2d3e 100%);
+  border-color: #333;
+}
+
+[data-theme="light"] .light-button:hover {
+  background: linear-gradient(225deg, #2d2d3e 0%, #3d3d4e 100%);
+  border-color: #444;
+}
+
+[data-theme="light"] .dark-button {
+  color: #1a1a2e;
+  background: linear-gradient(135deg, #fff 0%, #f0f0f0 100%);
+  border-color: #ddd;
+}
+
+[data-theme="light"] .dark-button:hover {
+  background: linear-gradient(225deg, #f8f8f8 0%, #e8e8e8 100%);
+  border-color: #ccc;
+}

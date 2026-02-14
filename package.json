@@ -1,0 +1,48 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "npm run lint:js && npm run lint:css",
+    "lint:js": "eslint .",
+    "lint:css": "stylelint \"**/*.css\"",
+    "lint:fix": "npm run lint:js:fix && npm run lint:css:fix",
+    "lint:js:fix": "eslint . --fix",
+    "lint:css:fix": "stylelint \"**/*.css\" --fix",
+    "format": "prettier --write \"**/*.{html,css,js,json}\"",
+    "format:check": "prettier --check \"**/*.{html,css,js,json}\"",
+    "generate:favicons": "node scripts/generate-favicons.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stevenpelletier90/portfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/stevenpelletier90/portfolio/issues"
+  },
+  "homepage": "https://github.com/stevenpelletier90/portfolio#readme",
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.0.0",
+    "eslint-config-prettier": "^10.1.8",
+    "globals": "^17.3.0",
+    "png-to-ico": "^3.0.1",
+    "prettier": "^3.8.1",
+    "sharp": "^0.34.5",
+    "stylelint": "^17.3.0",
+    "stylelint-config-recess-order": "^7.6.1",
+    "stylelint-config-standard": "^40.0.0",
+    "vite": "^7.3.1"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^7.2.0"
+  }
+}

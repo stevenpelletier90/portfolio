@@ -1,0 +1,155 @@
+/* ===================================
+   WORK
+   =================================== */
+.work-section {
+  position: relative;
+  padding: 120px 64px;
+  overflow: hidden;
+  color: var(--text-primary);
+  background: var(--bg-primary);
+}
+
+.work-section::before {
+  position: absolute;
+  top: 0;
+  right: 10%;
+  width: 400px;
+  height: 400px;
+  pointer-events: none;
+  content: "";
+  background: radial-gradient(circle, rgb(102 126 234 / 8%), transparent 70%);
+  border-radius: 50%;
+  filter: blur(60px);
+}
+
+.work-header {
+  max-width: 720px;
+  margin: 0 auto 64px;
+  text-align: center;
+}
+
+.work-title {
+  margin: 0 0 16px;
+  font-size: 56px;
+  font-weight: 800;
+  line-height: 1.05;
+  color: var(--text-primary);
+  letter-spacing: -0.03em;
+}
+
+.work-subtitle {
+  margin: 0 0 32px;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+.work-description {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.8;
+  color: var(--text-muted);
+}
+
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.project-card {
+  display: block;
+  overflow: hidden;
+  color: var(--text-primary);
+  text-decoration: none;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  border-color: rgb(116 255 139 / 30%);
+  box-shadow: 0 20px 60px var(--shadow-card);
+  transform: translateY(-4px);
+}
+
+.project-card-image {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.project-card .project-card-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.project-card:hover .project-card-image img {
+  transform: scale(1.05);
+}
+
+.project-card-content {
+  padding: 24px;
+}
+
+.project-card-title {
+  margin: 0 0 8px;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.project-card-description {
+  margin: 0 0 16px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+.project-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.work-cta-wrapper {
+  margin-top: 48px;
+  text-align: center;
+}
+
+.work-cta {
+  display: inline-flex;
+  gap: 16px;
+  align-items: center;
+}
+
+@media (width <= 768px) {
+  .work-section {
+    padding: 96px 32px;
+  }
+
+  .work-title {
+    font-size: 40px;
+  }
+
+  .work-subtitle {
+    font-size: 18px;
+  }
+
+  .work-description {
+    font-size: 16px;
+  }
+
+  .work-grid {
+    grid-template-columns: 1fr;
+  }
+}

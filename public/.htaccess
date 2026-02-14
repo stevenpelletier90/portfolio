@@ -1,0 +1,66 @@
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^www\.stevendpelletier\.com [NC]
+RewriteRule ^(.*)$ https://stevendpelletier.com/$1 [L,R=301]
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Redirect .html URLs to clean URLs (only redirect needed)
+  RewriteCond %{THE_REQUEST} \s/(.+)\.html[\s?] [NC]
+  RewriteRule ^ /%1/ [R=301,L]
+
+  # Serve .html file for trailing slash URLs
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_URI} ^/(.+)/$
+  RewriteCond %{DOCUMENT_ROOT}/%1.html -f
+  RewriteRule ^(.+)/$ /$1.html [L]
+
+  # Serve .html file for non-trailing slash URLs
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME}.html -f
+  RewriteRule ^ %{REQUEST_URI}.html [L]
+
+  # 404 fallback
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /404.html [L]
+</IfModule>
+
+# Caching
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/jpg "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/gif "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType application/pdf "access plus 1 month"
+  ExpiresByType text/x-javascript "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+  ExpiresByType application/x-shockwave-flash "access plus 1 month"
+  ExpiresByType image/x-icon "access plus 1 year"
+  ExpiresDefault "access plus 2 days"
+</IfModule>
+
+# Security Headers
+<IfModule mod_headers.c>
+  # X-Frame-Options
+  Header always set X-Frame-Options "DENY"
+  
+  # Strict-Transport-Security (HSTS)
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+  
+  # X-Content-Type-Options
+  Header always set X-Content-Type-Options "nosniff"
+  
+  # Referrer-Policy
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+  # Cross-Origin-Opener-Policy
+  Header always set Cross-Origin-Opener-Policy "same-origin"
+
+  # Content-Security-Policy
+  Header always set Content-Security-Policy "script-src 'self'; object-src 'none'; require-trusted-types-for 'script'"
+</IfModule>

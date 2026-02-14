@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {{> themeInit}}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 - Page Not Found | Steven Pelletier</title>
+    <meta
+      name="description"
+      content="The page you're looking for doesn't exist."
+    />
+    <link rel="canonical" href="https://stevendpelletier.com/404/" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    {{> header}}
+
+    <div class="not-found-page">
+      <div class="not-found-content">
+        <div class="not-found-text">
+          <h1 class="not-found-title">404</h1>
+          <h2 class="not-found-subtitle">Page Not Found</h2>
+          <p class="not-found-description">
+            Sorry, the page you're looking for doesn't exist. It might have been
+            moved, deleted, or you entered the wrong URL.
+          </p>
+          <div class="not-found-actions">
+            <a href="/" class="btn light-button cta-button">
+              <span class="btn-text">Back to Home</span>
+              <span class="btn-icon"
+                ><i class="fa-solid fa-arrow-right arrow-icon"></i
+              ></span>
+            </a>
+            <button onclick="history.back()" class="back-button">
+              <i class="fa-solid fa-arrow-left"></i>
+              Go Back
+            </button>
+          </div>
+        </div>
+        <div class="not-found-illustration">
+          <div class="error-code">404</div>
+          <div class="error-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

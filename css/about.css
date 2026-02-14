@@ -1,0 +1,234 @@
+/* ===================================
+   ABOUT
+   =================================== */
+.about-section {
+  position: relative;
+  padding: 120px 64px;
+  overflow: hidden;
+  color: var(--text-muted);
+  background: var(--bg-about);
+}
+
+.about-section::before {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 1px;
+  height: 80px;
+  content: "";
+  background: linear-gradient(to bottom, transparent, #667eea, transparent);
+  transform: translateX(-50%);
+}
+
+.about-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.about-header {
+  max-width: 720px;
+  margin: 0 auto 64px;
+  text-align: center;
+}
+
+.about-title {
+  margin: 0 0 24px;
+  font-size: 56px;
+  font-weight: 800;
+  line-height: 1.05;
+  color: var(--text-primary);
+  letter-spacing: -0.03em;
+}
+
+.about-summary {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.8;
+  color: var(--text-secondary);
+}
+
+/* Impact Stats */
+.impact-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-bottom: 64px;
+}
+
+.impact-item {
+  padding: 32px 24px;
+  text-align: center;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  transition: all 0.3s ease;
+}
+
+.impact-item:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-hover);
+  transform: translateY(-4px);
+}
+
+.impact-stat {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 1;
+  color: #8b9cf0;
+  letter-spacing: -0.03em;
+}
+
+.impact-item strong {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.impact-item p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+/* Skills Categories */
+.skills-categories {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.skill-category {
+  padding: 28px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.skill-category:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-hover);
+  transform: translateY(-2px);
+}
+
+.category-title {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin: 0 0 20px;
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
+.category-title svg,
+.category-title i {
+  font-size: 16px;
+  color: #8b9cf0;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-tag {
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+  padding: 7px 16px;
+  font-size: 13px;
+  color: var(--text-muted);
+  white-space: nowrap;
+  background: var(--bg-tag);
+  border: 1px solid var(--border-subtle);
+  border-radius: 9999px;
+  transition: all 0.25s ease;
+}
+
+.skill-tag i {
+  font-size: 12px;
+  color: #8b9cf0;
+}
+
+.skill-tag:hover {
+  color: var(--text-primary);
+  background: rgb(102 126 234 / 15%);
+  border-color: rgb(102 126 234 / 30%);
+  transform: translateY(-1px);
+}
+
+@media (width <= 1024px) {
+  .about-title {
+    font-size: 44px;
+  }
+
+  .impact-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (width <= 768px) {
+  .about-section {
+    padding: 80px 32px;
+  }
+
+  .about-header {
+    margin-bottom: 48px;
+  }
+
+  .about-title {
+    font-size: 36px;
+  }
+
+  .about-summary {
+    font-size: 16px;
+  }
+
+  .impact-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-bottom: 48px;
+  }
+
+  .impact-item {
+    padding: 24px 16px;
+  }
+
+  .impact-stat {
+    font-size: 32px;
+  }
+
+  .impact-item strong {
+    font-size: 14px;
+  }
+
+  .impact-item p {
+    font-size: 13px;
+  }
+
+  .skills-categories {
+    grid-template-columns: 1fr;
+  }
+
+  .skill-category {
+    padding: 20px;
+  }
+
+  .category-title {
+    font-size: 16px;
+  }
+
+  .skill-tag {
+    padding: 6px 14px;
+    font-size: 12px;
+  }
+}

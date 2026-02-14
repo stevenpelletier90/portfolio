@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {{> themeInit}}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projects - Steven Pelletier Portfolio</title>
+    <meta
+      name="description"
+      content="Browse my portfolio of web development projects including e-commerce platforms, task management systems, and more."
+    />
+    <meta
+      name="keywords"
+      content="web development projects, React, Node.js, WordPress, Steven Pelletier"
+    />
+    <meta property="og:title" content="Projects - Steven Pelletier" />
+    <meta
+      property="og:description"
+      content="Browse my portfolio of web development projects."
+    />
+    <meta property="og:type" content="website" />
+    <link rel="canonical" href="https://stevendpelletier.com/projects/" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    {{> header}}
+
+    <section class="work-section" style="padding-top: 160px">
+      <div class="work-header">
+        <h1 class="work-title">Projects</h1>
+        <p class="work-subtitle">Featured Work</p>
+        <p class="work-description">
+          Each project represents a unique challenge solved through strategic
+          thinking and technical execution. From enterprise content migrations
+          serving thousands of users to accessibility-compliant custom
+          solutions, my work combines performance, usability, and business
+          impact.
+        </p>
+      </div>
+      <div class="work-grid">
+        <a href="/projects/ecommerce-store/" class="project-card">
+          <div class="project-card-image">
+            <img
+              src="https://placehold.co/800x600/f59e0b/ffffff?text=E-Commerce"
+              alt="E-Commerce Platform"
+            />
+          </div>
+          <div class="project-card-content">
+            <h2 class="project-card-title">E-Commerce Platform</h2>
+            <p class="project-card-description">
+              Online store with shopping cart and payment integration
+            </p>
+            <div class="project-card-tags">
+              <span class="tech-tag">React</span>
+              <span class="tech-tag">Redux</span>
+              <span class="tech-tag">Stripe API</span>
+              <span class="tech-tag">Node.js</span>
+            </div>
+          </div>
+        </a>
+        <a href="/projects/task-manager/" class="project-card">
+          <div class="project-card-image">
+            <img
+              src="https://placehold.co/800x600/8b5cf6/ffffff?text=Task+Manager"
+              alt="Task Management System"
+            />
+          </div>
+          <div class="project-card-content">
+            <h2 class="project-card-title">Task Management System</h2>
+            <p class="project-card-description">
+              Full-stack task management application with authentication
+            </p>
+            <div class="project-card-tags">
+              <span class="tech-tag">React</span>
+              <span class="tech-tag">Node.js</span>
+              <span class="tech-tag">MongoDB</span>
+              <span class="tech-tag">JWT</span>
+            </div>
+          </div>
+        </a>
+        <a href="/projects/weather-app/" class="project-card">
+          <div class="project-card-image">
+            <img
+              src="https://placehold.co/800x600/0ea5e9/ffffff?text=Weather+App"
+              alt="Weather Dashboard"
+            />
+          </div>
+          <div class="project-card-content">
+            <h2 class="project-card-title">Weather Dashboard</h2>
+            <p class="project-card-description">
+              A responsive weather application with real-time data
+            </p>
+            <div class="project-card-tags">
+              <span class="tech-tag">React</span>
+              <span class="tech-tag">API Integration</span>
+              <span class="tech-tag">CSS Grid</span>
+            </div>
+          </div>
+        </a>
+        <a href="/projects/portfolio-site/" class="project-card">
+          <div class="project-card-image">
+            <img
+              src="https://placehold.co/800x600/10b981/ffffff?text=Portfolio"
+              alt="Portfolio Website"
+            />
+          </div>
+          <div class="project-card-content">
+            <h2 class="project-card-title">Portfolio Website</h2>
+            <p class="project-card-description">
+              Personal portfolio showcasing web development projects
+            </p>
+            <div class="project-card-tags">
+              <span class="tech-tag">HTML</span>
+              <span class="tech-tag">CSS</span>
+              <span class="tech-tag">JavaScript</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    {{> footer}}
+
+    <script type="module" src="/js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {{> themeInit}}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Dashboard - Steven Pelletier Portfolio</title>
+    <meta
+      name="description"
+      content="A responsive weather application with real-time data"
+    />
+    <meta name="keywords" content="React, API Integration, CSS Grid" />
+    <meta property="og:title" content="Weather Dashboard - Steven Pelletier" />
+    <meta
+      property="og:description"
+      content="A responsive weather application with real-time data"
+    />
+    <meta property="og:type" content="website" />
+    <link
+      rel="canonical"
+      href="https://stevendpelletier.com/projects/weather-app/"
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    {{> header}}
+
+    <div class="project-page">
+      <div class="project-header">
+        <a href="/" class="back-button">
+          <i class="fa-solid fa-arrow-left"></i>
+          Back to Projects
+        </a>
+      </div>
+      <div class="project-content">
+        <div class="project-hero">
+          <img
+            src="https://placehold.co/400x300/0ea5e9/ffffff?text=Weather+App"
+            alt="Weather Dashboard"
+            class="project-hero-image"
+          />
+          <div class="project-hero-text">
+            <h1 class="project-title">Weather Dashboard</h1>
+            <p class="project-description">
+              A responsive weather application with real-time data
+            </p>
+            <div class="project-tech-stack">
+              <span class="tech-tag">React</span>
+              <span class="tech-tag">API Integration</span>
+              <span class="tech-tag">CSS Grid</span>
+            </div>
+            <div class="project-links">
+              <a
+                href="https://example.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn light-button cta-button"
+              >
+                <span class="btn-text">View Live Site</span>
+                <span class="btn-icon"
+                  ><i class="fa-solid fa-arrow-right arrow-icon"></i
+                ></span>
+              </a>
+              <a
+                href="https://github.com/example"
+                class="github-link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="fa-brands fa-github"></i>
+                View Code
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="project-details">
+          <h2>Project Details</h2>
+          <p class="project-details-text">
+            Built a fully responsive weather dashboard that displays current
+            weather conditions and 5-day forecasts. Integrated with
+            OpenWeatherMap API for real-time data. Features include city search,
+            unit conversion, and local storage for favorite locations.
+          </p>
+          <div class="project-gallery">
+            <h3>Screenshots</h3>
+            <div class="gallery-grid">
+              <img
+                src="https://placehold.co/800x600/0ea5e9/ffffff?text=Weather+Dashboard"
+                alt="Weather Dashboard screenshot 1"
+                class="gallery-image"
+              />
+              <img
+                src="https://placehold.co/800x600/0284c7/ffffff?text=Weather+Forecast"
+                alt="Weather Dashboard screenshot 2"
+                class="gallery-image"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

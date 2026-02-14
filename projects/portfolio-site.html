@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {{> themeInit}}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio Website - Steven Pelletier Portfolio</title>
+    <meta
+      name="description"
+      content="Personal portfolio showcasing web development projects"
+    />
+    <meta name="keywords" content="HTML, CSS, JavaScript" />
+    <meta property="og:title" content="Portfolio Website - Steven Pelletier" />
+    <meta
+      property="og:description"
+      content="Personal portfolio showcasing web development projects"
+    />
+    <meta property="og:type" content="website" />
+    <link
+      rel="canonical"
+      href="https://stevendpelletier.com/projects/portfolio-site/"
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    {{> header}}
+
+    <div class="project-page">
+      <div class="project-header">
+        <a href="/" class="back-button">
+          <i class="fa-solid fa-arrow-left"></i>
+          Back to Projects
+        </a>
+      </div>
+      <div class="project-content">
+        <div class="project-hero">
+          <img
+            src="https://placehold.co/400x300/10b981/ffffff?text=Portfolio"
+            alt="Portfolio Website"
+            class="project-hero-image"
+          />
+          <div class="project-hero-text">
+            <h1 class="project-title">Portfolio Website</h1>
+            <p class="project-description">
+              Personal portfolio showcasing web development projects
+            </p>
+            <div class="project-tech-stack">
+              <span class="tech-tag">HTML</span>
+              <span class="tech-tag">CSS</span>
+              <span class="tech-tag">JavaScript</span>
+            </div>
+            <div class="project-links">
+              <a
+                href="https://example.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn light-button cta-button"
+              >
+                <span class="btn-text">View Live Site</span>
+                <span class="btn-icon"
+                  ><i class="fa-solid fa-arrow-right arrow-icon"></i
+                ></span>
+              </a>
+              <a
+                href="https://github.com/example"
+                class="github-link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="fa-brands fa-github"></i>
+                View Code
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="project-details">
+          <h2>Project Details</h2>
+          <p class="project-details-text">
+            Created a modern, responsive portfolio website to showcase web
+            development projects. Features smooth animations, optimized
+            performance, and a clean, professional design.
+          </p>
+          <div class="project-gallery">
+            <h3>Screenshots</h3>
+            <div class="gallery-grid">
+              <img
+                src="https://placehold.co/800x600/10b981/ffffff?text=Portfolio+Home"
+                alt="Portfolio screenshot 1"
+                class="gallery-image"
+              />
+              <img
+                src="https://placehold.co/800x600/059669/ffffff?text=Project+Gallery"
+                alt="Portfolio screenshot 2"
+                class="gallery-image"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
