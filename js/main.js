@@ -25,24 +25,18 @@ const heroEl = document.getElementById("home");
 if (heroEl) {
   const canvas = document.createElement("canvas");
   canvas.className = "hero-wave-canvas";
+  heroEl.insertBefore(canvas, heroEl.firstChild);
 
   const ctx = canvas.getContext("2d");
-  let width,
-    height,
+  let width = 0,
+    height = 0,
     mouseX = 0.5,
     mouseY = 0.5;
 
-  function resize() {
-    const w = heroEl.offsetWidth;
-    const h = heroEl.offsetHeight;
-    width = canvas.width = w;
-    height = canvas.height = h;
-  }
-
-  // Read dimensions before inserting canvas to avoid forced reflow
-  resize();
-  heroEl.insertBefore(canvas, heroEl.firstChild);
-  window.addEventListener("resize", resize);
+  new ResizeObserver(([entry]) => {
+    width = canvas.width = entry.contentRect.width;
+    height = canvas.height = entry.contentRect.height;
+  }).observe(heroEl);
 
   heroEl.addEventListener("mousemove", (e) => {
     const rect = heroEl.getBoundingClientRect();
@@ -221,14 +215,10 @@ if (footerCanvas) {
   const fCtx = footerCanvas.getContext("2d");
   let fWidth, fHeight;
 
-  function footerResize() {
-    const w = footer.offsetWidth;
-    const h = footer.offsetHeight;
-    fWidth = footerCanvas.width = w;
-    fHeight = footerCanvas.height = h;
-  }
-  footerResize();
-  window.addEventListener("resize", footerResize);
+  new ResizeObserver(([entry]) => {
+    fWidth = footerCanvas.width = entry.contentRect.width;
+    fHeight = footerCanvas.height = entry.contentRect.height;
+  }).observe(footer);
 
   const sunsetWaves = [
     {
