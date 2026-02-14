@@ -2,7 +2,6 @@ import { readFileSync } from "fs";
 import { resolve } from "path";
 import { fileURLToPath } from "url";
 import { defineConfig } from "vite";
-import { ViteMinifyPlugin } from "vite-plugin-minify";
 
 const __dirname = fileURLToPath(new URL(".", import.meta.url));
 
@@ -70,7 +69,6 @@ export default defineConfig({
   plugins: [
       htmlPartials(),
       fontPreload(),
-      ViteMinifyPlugin(),
     ],
   build: {
     outDir: "dist",
