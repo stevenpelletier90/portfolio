@@ -1,3 +1,4 @@
+import { createHash } from "crypto";
 import { readFileSync } from "fs";
 import { resolve } from "path";
 import { fileURLToPath } from "url";
@@ -29,6 +30,19 @@ function htmlPartials() {
       html = html.replace(/\{\{(\w+)\}\}/g, (_match, key) => {
         return vars[key] !== undefined ? vars[key] : `{{${key}}}`;
       });
+
+      // Compute CSP hash for inline theme-init script
+      const scriptMatch = html.match(/<script>([\s\S]*?)<\/script>/);
+      if (scriptMatch) {
+        const hash = createHash("sha256")
+          .update(scriptMatch[1])
+          .digest("base64");
+        const csp = `script-src 'self' 'sha256-${hash}'; object-src 'none'`;
+        html = html.replace(
+          "<head>",
+          `<head><meta http-equiv="Content-Security-Policy" content="${csp}">`
+        );
+      }
 
       return html;
     },

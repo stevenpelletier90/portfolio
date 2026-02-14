@@ -61,6 +61,5 @@ RewriteRule ^(.*)$ https://stevendpelletier.com/$1 [L,R=301]
   # Cross-Origin-Opener-Policy
   Header always set Cross-Origin-Opener-Policy "same-origin"
 
-  # Content-Security-Policy
-  Header always set Content-Security-Policy "script-src 'self'; object-src 'none'; require-trusted-types-for 'script'"
+  # Content-Security-Policy (inline script hash managed via <meta> tag in HTML)
 </IfModule>

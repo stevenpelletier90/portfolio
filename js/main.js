@@ -25,7 +25,6 @@ const heroEl = document.getElementById("home");
 if (heroEl) {
   const canvas = document.createElement("canvas");
   canvas.className = "hero-wave-canvas";
-  heroEl.insertBefore(canvas, heroEl.firstChild);
 
   const ctx = canvas.getContext("2d");
   let width,
@@ -39,7 +38,10 @@ if (heroEl) {
     width = canvas.width = w;
     height = canvas.height = h;
   }
+
+  // Read dimensions before inserting canvas to avoid forced reflow
   resize();
+  heroEl.insertBefore(canvas, heroEl.firstChild);
   window.addEventListener("resize", resize);
 
   heroEl.addEventListener("mousemove", (e) => {
