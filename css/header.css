@@ -2,18 +2,14 @@
    HEADER
    =================================== */
 .header {
-  position: fixed;
-  top: 0;
+  position: relative;
   z-index: 1000;
   width: 100%;
-  background: var(--header-bg);
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  background: var(--bg-hero);
 }
 
 .header.scrolled {
-  background: var(--header-scrolled);
-  box-shadow: 0 2px 20px rgb(0 0 0 / 10%);
-  backdrop-filter: blur(10px);
+  background: var(--bg-hero);
 }
 
 .header-top {
@@ -144,8 +140,7 @@
 
 @media (width <= 768px) {
   .header {
-    background: var(--header-mobile-bg);
-    backdrop-filter: blur(10px);
+    background: var(--bg-hero);
   }
 
   .header-top {

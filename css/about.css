@@ -178,11 +178,15 @@
 
 @media (width <= 768px) {
   .about-section {
-    padding: 80px 32px;
+    padding: 48px 24px 64px;
+  }
+
+  .about-section::before {
+    height: 32px;
   }
 
   .about-header {
-    margin-bottom: 48px;
+    margin-bottom: 40px;
   }
 
   .about-title {
